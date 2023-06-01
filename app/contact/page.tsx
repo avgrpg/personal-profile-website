@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import Layout from "../(home)/Layout";
 import { SelectedPage } from "../(shared)/types";
