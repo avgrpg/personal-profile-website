@@ -5,7 +5,7 @@ import dp from "public/developer-pic-1.png";
 import AnimatedText from "./(home)/AnimatedText";
 import Link from "next/link";
 import { LinkIcon } from "./(shared)/icon";
-import About from "./about/page";
+import About from "./(about)/page";
 import Navbar from "./(shared)/Navbar";
 import HomePage from "./(home)/HomePage";
 import { useState } from "react";
@@ -80,10 +80,10 @@ export default function Home() {
           </div>
         </Layout>
       </main> */}
-      <HomePage setSelectedPage={setSelectedPage}/>
-      <About setSelectedPage={setSelectedPage}/>
-      <Project setSelectedPage={setSelectedPage} />
-      <Contact setSelectedPage={setSelectedPage} />
+      <HomePage />
+      <About />
+      <Project  />
+      <Contact  />
       <Footer />
     </>
   );

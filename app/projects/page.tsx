@@ -115,11 +115,7 @@ const cardVariant = {
   },
 };
 
-const Projects = ({
-  setSelectedPage,
-}: {
-  setSelectedPage: (value: SelectedPage) => void;
-}) => {
+const Projects = () => {
   const [showTechDetail, setShowTechDetail] = useState<Number | null>(null);
   const [selectedCard, setSelectedCard] = useState<Number | null>(null);
   return (
@@ -130,7 +126,7 @@ const Projects = ({
       <Layout className="mx-auto md:px-12 lg:w-5/6 2xl:w-3/4">
         <motion.h1
           className="my-12 text-4xl font-bold"
-          onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
+          // onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
         >
           Projects
         </motion.h1>
