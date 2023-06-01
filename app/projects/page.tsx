@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import Layout from "../(home)/Layout";
 import Image from "next/image";
