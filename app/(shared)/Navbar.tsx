@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Logo from "./Logo";
 // import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import useThemeSwitcher from "./hooks/useThemeSwitcher";
+import useThemeSwitcher from "./useThemeSwitcher";
 import { LightIcon } from "./icon";
 import { MoonIcon } from "./icon";
 import { motion } from "framer-motion";
