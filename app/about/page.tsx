@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "../(home)/Layout";
 import Image from "next/image";
@@ -12,25 +11,26 @@ const About = ({
   setSelectedPage,
 }: {
   setSelectedPage: (value: SelectedPage) => void;
+  
 }) => {
   const flexbetween = "flex items-center justify-between";
 
   return (
     <section
-      className="mx-auto w-full dark:text-light bg-light dark:bg-dark"
+      className="mx-auto w-full bg-light dark:bg-dark dark:text-light"
       id="about"
     >
-      <Layout className="py-16 mt-20">
+      <Layout className="mt-20 py-16">
         <motion.div
           initial={{ y: 100 }}
           whileInView={{ y: 0 }}
           // viewport={{ once: true }}
-          transition={{ duration: 0.5,}}
+          transition={{ duration: 0.5 }}
           onViewportEnter={() => setSelectedPage(SelectedPage.About)}
           viewport={{ once: true, amount: 0.8 }}
-          className={`${flexbetween} mx-auto gap-12 px-0 md:px-12 lg:w-5/6 2xl:w-1/2 flex-col md:flex-row`}
+          className={`${flexbetween} mx-auto flex-col gap-12 px-0 md:flex-row md:px-12 lg:w-5/6 2xl:w-1/2`}
         >
-          <div className="md:w-1/2 w-5/6">
+          <div className="w-5/6 md:w-1/2">
             <Image
               alt="tech"
               placeholder="blur"
@@ -44,13 +44,22 @@ const About = ({
               50vw"
             />
           </div>
-          <div className="mb-auto md:w-1/2 w-5/6">
+          <div className="mb-auto w-5/6 md:w-1/2">
             <div className="text-md font-extrabold">ABOUT ME</div>
             <div className="my-2 text-2xl font-bold">
               Passionate in Creating Pleasant Frontend Development & Design
             </div>
             <p className="text-lg">
-            Ben Tsui is a fresh graduate passionate about frontend development and interface design. He will own a Bachelor of Engineering in Information Engineering from the City University of Hong Kong. His background in engineering and passion for frontend development make him eager to stay in tune with the latest technologies related to web development and interface design. He self-learned various technologies like Node.js, React, Typescript, Tailwind, and more. With passion and skills learned, he looks forward to building responsive, pleasant, and user-friendly websites with optimized performance.
+              Ben Tsui is a fresh graduate passionate about frontend development
+              and interface design. He will own a Bachelor of Engineering in
+              Information Engineering from the City University of Hong Kong. His
+              background in engineering and passion for frontend development
+              make him eager to stay in tune with the latest technologies
+              related to web development and interface design. He self-learned
+              various technologies like Node.js, React, Typescript, Tailwind,
+              and more. With passion and skills learned, he looks forward to
+              building responsive, pleasant, and user-friendly websites with
+              optimized performance.
             </p>
           </div>
         </motion.div>

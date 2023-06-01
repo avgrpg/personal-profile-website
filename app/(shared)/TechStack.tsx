@@ -118,24 +118,24 @@ const TechStackComponent = ({
   </motion.a>;
 };
 
-const techStack = (props: Props) => {
+const TechStack = (props: Props) => {
   const flexbetween = "flex items-center";
   const [popedout, setPopedout] = useState(false);
+  const [showTechDetail, setShowTechDetail] = useState<Number | null>(null);
 
   return (
     <div className={`${flexbetween} mt-12 gap-4 md:self-start`}>
       {iconList.map(({ name, icon, link }, index) => {
-        const [showTechDetail, setShowTechDetail] = useState(false);
         return (
           <motion.a
             href={link}
             target="_blank"
             onHoverStart={() => {
-              setShowTechDetail(true);
+              setShowTechDetail(index);
               setPopedout(true);
             }}
             onHoverEnd={() => {
-              setShowTechDetail(false);
+              setShowTechDetail(null);
               setPopedout(false);
             }}
             key={index}
@@ -148,7 +148,7 @@ const techStack = (props: Props) => {
             >
               {icon}
             </motion.div>
-            {showTechDetail && (
+            {(showTechDetail === index) && (
               <motion.div
                 initial={{ x: 0 }}
                 animate={{ x: 5 }}
@@ -204,7 +204,7 @@ const techStack = (props: Props) => {
   );
 };
 
-export default techStack;
+export default TechStack;
 function setShowTechDetail(arg0: boolean) {
   throw new Error("Function not implemented.");
 }

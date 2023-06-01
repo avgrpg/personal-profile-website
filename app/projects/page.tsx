@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Layout from "../(home)/Layout";
 import Image from "next/image";
@@ -120,6 +120,8 @@ const Projects = ({
 }: {
   setSelectedPage: (value: SelectedPage) => void;
 }) => {
+  const [showTechDetail, setShowTechDetail] = useState<Number | null>(null);
+  const [selectedCard, setSelectedCard] = useState<Number | null>(null);
   return (
     <section
       className="mx-auto flex w-full bg-light dark:bg-dark dark:text-light"
@@ -140,21 +142,17 @@ const Projects = ({
           variants={cardVariant}
         >
           {cards.map((card, index) => {
-            const [selectedCard, setSelectedCard] = useState(false);
             return (
-              <motion.div variants={childVariant}>
+              <motion.div variants={childVariant} key={index}>
                 <motion.div
-                  layout
-                  layoutId={card.id.toString()}
                   transition={{
                     duration: 0.5,
                     type: "spring",
                     ease: "easeInOut",
                   }}
-                  key={index}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.03 }}
-                  onTap={() => setSelectedCard(!selectedCard)}
+                  onTap={() => setSelectedCard(index)}
                   className="my-6 cursor-pointer items-center justify-between rounded-md bg-neutral-200 shadow-lg dark:bg-neutral-800 md:flex"
                 >
                   <div className="basis-1/3">
@@ -177,34 +175,38 @@ const Projects = ({
                     )}
                     <div className="mt-4 flex flex-row gap-2">
                       {card.techStack.map(({ name, icon, link }, index) => {
-                        const [showTechDetail, setShowTechDetail] =
-                          useState(false);
                         return (
-                          <motion.a
-                            href={link}
-                            target="_blank"
-                            onHoverStart={() => {
-                              setShowTechDetail(true);
-                            }}
-                            onHoverEnd={() => {
-                              setShowTechDetail(false);
-                            }}
-                            key={index}
-                            className="flex flex-row items-center gap-2"
-                          >
-                            <motion.div whileHover={{ y: -2 }}>
-                              {icon}
-                            </motion.div>
-                            {showTechDetail && (
-                              <motion.div
-                                initial={{ x: -2 }}
-                                animate={{ x: 0 }}
-                                transition={{ duration: 0.5 }}
-                              >
-                                {name}
-                              </motion.div>
-                            )}
-                          </motion.a>
+                          // <motion.a
+                          //   href={link}
+                          //   target="_blank"
+                          //   onHoverStart={() => {
+                          //     setShowTechDetail(index);
+                          //   }}
+                          //   onHoverEnd={() => {
+                          //     setShowTechDetail(null);
+                          //   }}
+                          //   key={index}
+                          //   className="flex flex-row items-center gap-2"
+                          // >
+                          //   <motion.div whileHover={{ y: -2 }}>
+                          //     {icon}
+                          //   </motion.div>
+                          //   {showTechDetail == index && (
+                          //     <motion.div
+                          //       initial={{ x: -2 }}
+                          //       animate={{ x: 0 }}
+                          //       transition={{ duration: 0.5 }}
+                          //     >
+                          //       {name}
+                          //     </motion.div>
+                          //   )}
+                          // </motion.a>
+                          <TechStackVariant 
+                          name={name}
+                          icon={icon}
+                          link={link}
+                          index={index}
+                          key={index}/>
                         );
                       })}
                     </div>
@@ -228,3 +230,42 @@ const Projects = ({
 };
 
 export default Projects;
+
+const TechStackVariant = ({
+  name,
+  icon,
+  link,
+  index,
+}: {
+  name: string;
+  icon: JSX.Element;
+  link: string;
+  index: number;
+}) => {
+  const [showTechDetail, setShowTechDetail]=useState(false)
+  return (
+    <motion.a
+      href={link}
+      target="_blank"
+      onHoverStart={() => {
+        setShowTechDetail(true);
+      }}
+      onHoverEnd={() => {
+        setShowTechDetail(false);
+      }}
+      key={index}
+      className="flex flex-row items-center gap-2"
+    >
+      <motion.div whileHover={{ y: -2 }}>{icon}</motion.div>
+      {showTechDetail && (
+        <motion.div
+          initial={{ x: -2 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {name}
+        </motion.div>
+      )}
+    </motion.a>
+  );
+};
