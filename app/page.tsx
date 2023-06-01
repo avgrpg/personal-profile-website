@@ -10,8 +10,8 @@ import Navbar from "./(shared)/Navbar";
 import HomePage from "./(home)/HomePage";
 import { useState } from "react";
 import { SelectedPage } from "./(shared)/types";
-import Project from "./projects/page";
-import Contact from "./contact/page";
+import Project from "./(projects)/page";
+import Contact from "./(contact)/page";
 import Footer from "./(shared)/Footer";
 
 const LayoutProp = {
