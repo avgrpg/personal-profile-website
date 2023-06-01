@@ -85,13 +85,17 @@ const mobileArticles = {
 
 const navLinks = ["Home", "About", "Projects", "Contact"];
 
+type Props = {
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
+}
+
 const Navbar = ({
   selectedPage,
   setSelectedPage,
-}: {
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
-}) => {
+}: 
+  Props
+) => {
   const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
 
