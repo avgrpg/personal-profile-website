@@ -1,13 +1,16 @@
+"use client"
 import React from "react";
 import Layout from "../(home)/Layout";
 import Image from "next/image";
 import dp from "public/remy_loz-3S0INpfREQc-unsplash.jpg";
-import { SelectedPage } from "../(shared)/types";
+import { SelectedPage } from "./types";
 import { motion } from "framer-motion";
 
-type Props = {};
+type Props = {
+  setSelectedPage: (value: SelectedPage) => void;
+};
 
-const About = () => {
+const About = ({ setSelectedPage }: Props) => {
   const flexbetween = "flex items-center justify-between";
 
   return (
@@ -21,7 +24,7 @@ const About = () => {
           whileInView={{ y: 0 }}
           // viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          // onViewportEnter={() => setSelectedPage(SelectedPage.About)}
+          onViewportEnter={() => setSelectedPage(SelectedPage.About)}
           viewport={{ once: true, amount: 0.8 }}
           className={`${flexbetween} mx-auto flex-col gap-12 px-0 md:flex-row md:px-12 lg:w-5/6 2xl:w-1/2`}
         >

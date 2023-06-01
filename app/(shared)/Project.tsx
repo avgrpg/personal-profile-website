@@ -10,10 +10,10 @@ import {
   ReactIcon,
   TailwindIcon,
   TypescriptIcon,
-} from "../(shared)/icon";
+} from "./icon";
 import Link from "next/link";
 
-import { SelectedPage } from "../(shared)/types";
+import { SelectedPage } from "./types";
 
 const iconSize = 25;
 const cards = [
@@ -116,7 +116,6 @@ const cardVariant = {
 };
 
 const Projects = () => {
-  const [showTechDetail, setShowTechDetail] = useState<Number | null>(null);
   const [selectedCard, setSelectedCard] = useState<Number | null>(null);
   return (
     <section
@@ -164,7 +163,7 @@ const Projects = () => {
                   <div className="flex basis-2/3 flex-col p-5">
                     <h2 className="text-xl font-bold">{card.name}</h2>
                     <p className="mt-2 text-base">{card.description}</p>
-                    {selectedCard && (
+                    {(selectedCard == index)&& (
                       <p className="mt-2 text-base">
                         {card.furtherDescription}
                       </p>

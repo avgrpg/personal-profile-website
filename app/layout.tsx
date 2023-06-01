@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className={rubik.className}>
       <body className="dark:bg-dark">
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

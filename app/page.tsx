@@ -1,17 +1,11 @@
 "use client";
-import Image from "next/image";
-import Layout from "./(home)/Layout";
-import dp from "public/developer-pic-1.png";
-import AnimatedText from "./(home)/AnimatedText";
-import Link from "next/link";
-import { LinkIcon } from "./(shared)/icon";
-import About from "./(about)/page";
+import About from "./(shared)/About";
 import Navbar from "./(shared)/Navbar";
 import HomePage from "./(home)/HomePage";
 import { useState } from "react";
 import { SelectedPage } from "./(shared)/types";
-import Project from "./(projects)/page";
-import Contact from "./(contact)/page";
+import Project from "./(shared)/Project";
+import Contact from "./(shared)/Contact";
 import Footer from "./(shared)/Footer";
 
 const LayoutProp = {
@@ -81,10 +75,10 @@ export default function Home() {
         </Layout>
       </main> */}
       <HomePage />
-      <About />
+      <About  setSelectedPage={setSelectedPage} />
       <Project  />
       <Contact  />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

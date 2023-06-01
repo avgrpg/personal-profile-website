@@ -4,11 +4,11 @@ import Layout from "../(home)/Layout";
 import AnimatedText from "../(home)/AnimatedText";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { GithubIcon } from "../(shared)/icon";
+import { GithubIcon } from "./icon";
 
 import dp from "public/developer-pic-1.png";
 import { motion } from "framer-motion";
-import { SelectedPage } from "../(shared)/types";
+import { SelectedPage } from "./types";
 
 type Props = {};
 
@@ -130,7 +130,7 @@ const NonFeaturedProject = ({
   );
 };
 
-const Project = ({
+const ProjectEx = ({
   setSelectedPage,
 }: {
   setSelectedPage: (value: SelectedPage) => void;
@@ -183,4 +183,4 @@ const Project = ({
   );
 };
 
-export default Project;
+export default ProjectEx;

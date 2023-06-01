@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Layout from "../(home)/Layout";
-import { SelectedPage } from "../(shared)/types";
+import { SelectedPage } from "./types";
 import {
   CopyIcon,
   GithubIcon,
@@ -9,7 +9,7 @@ import {
   LinkedInIcon,
   MailIcon,
   PhoneIcon,
-} from "../(shared)/icon";
+} from "./icon";
 import { useState } from "react";
 import Link from "next/link";
 
