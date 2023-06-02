@@ -8,7 +8,7 @@ import {
   ReactIcon,
   TailwindIcon,
   TypescriptIcon,
-} from "./icon";
+} from "./Icon";
 import { AnimatePresence, motion } from "framer-motion";
 import js from "public/icons/js.svg"
 

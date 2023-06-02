@@ -10,7 +10,7 @@ import {
   ReactIcon,
   TailwindIcon,
   TypescriptIcon,
-} from "./icon";
+} from "./Icon";
 import Link from "next/link";
 
 // import js from "public/icons/js.svg"

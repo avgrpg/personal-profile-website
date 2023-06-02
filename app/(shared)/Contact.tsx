@@ -9,7 +9,7 @@ import {
   LinkedInIcon,
   MailIcon,
   PhoneIcon,
-} from "./icon";
+} from "./Icon";
 import { useState } from "react";
 import Link from "next/link";
 

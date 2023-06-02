@@ -4,7 +4,7 @@ import Layout from "../(home)/Layout";
 import AnimatedText from "../(home)/AnimatedText";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { GithubIcon } from "./icon";
+import { GithubIcon } from "./Icon";
 
 import dp from "public/developer-pic-1.png";
 import { motion } from "framer-motion";
