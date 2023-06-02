@@ -88,14 +88,9 @@ const navLinks = ["Home", "About", "Projects", "Contact"];
 type Props = {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
-}
+};
 
-const Navbar = ({
-  selectedPage,
-  setSelectedPage,
-}: 
-  Props
-) => {
+const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -121,7 +116,7 @@ const Navbar = ({
 
   return (
     <header
-      className={`${flexbetween} backdrop fixed z-30 w-full px-8 md:px-32 font-medium dark:bg-transparent dark:text-light
+      className={`${flexbetween} backdrop fixed z-30 w-full px-8 font-medium dark:bg-transparent dark:text-light md:px-32
       ${animateHeader && "shadow-lg backdrop-blur-lg backdrop-filter"}`}
     >
       {/* Mobile nav menu button */}
@@ -211,45 +206,21 @@ const Navbar = ({
       {/* Mobile menu*/}
       {isOpen && (
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "20%" }}
           animate={{ scale: 1, opacity: 1 }}
-          className={`${flexbetween} fixed left-1/2 top-1/2 z-999 min-h-[70vh] min-w-[70vw]  flex-col rounded-lg bg-dark/90 py-32 backdrop-blur-sm dark:bg-light/90`}
+          className={`${flexbetween} absolute left-1/2 top-1/2 z-30 min-h-[70vh] min-w-[70vw]  flex-col rounded-lg bg-dark/90 py-32 backdrop-blur-sm dark:bg-light/90`}
           onClick={() => setIsOpen(false)}
         >
           <nav className="flex flex-col items-center justify-center text-xl font-medium text-light dark:text-dark">
-            {/* <SmoothLink
-              page="Home"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-              isMobileScreen
-            />
-            <SmoothLink
-              page="About"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-              isMobileScreen
-            />
-            <SmoothLink
-              page="Projects"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-              isMobileScreen
-            />
-            <SmoothLink
-              page="Articles"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-              isMobileScreen
-            /> */}
             {navLinks.map((link, item) => (
-            <SmoothLink
-              key={item}
-              page={link}
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-              isMobileScreen
-            />
-          ))}
+              <SmoothLink
+                key={item}
+                page={link}
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+                isMobileScreen
+              />
+            ))}
           </nav>
         </motion.div>
       )}

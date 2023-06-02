@@ -9,5 +9,4 @@ body,
   height: 100%;
   width: 100%;
   @apply text-sm;
-  overflow-x: hidden;
 }
