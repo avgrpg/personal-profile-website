@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import dp from "public/nubelson-fernandes-iE71-TMrrkE-unsplash.jpg";
-import { DownIcon, LinkIcon } from "./../(shared)/Icon";
+import { DownIcon, LinkIcon } from "@/app/(shared)/Icon";
 import AnimatedText from "./AnimatedText";
 import Layout from "./Layout";
 import { SelectedPage } from "../(shared)/types";
