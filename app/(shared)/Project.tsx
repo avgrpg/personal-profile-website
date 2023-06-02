@@ -151,8 +151,8 @@ const Projects = ({setSelectedPage}: Props) => {
         <motion.div
           className="self-center"
           initial="hidden"
-          whileInView={"visible"}
-          viewport={{ once: true, amount: 0.5 }}
+          whileInView="visible"
+          viewport={{ once: true }}
           variants={cardVariant}
         >
           {cards.map((card, index) => {
