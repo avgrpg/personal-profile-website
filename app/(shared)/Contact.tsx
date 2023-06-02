@@ -13,7 +13,11 @@ import {
 import { useState } from "react";
 import Link from "next/link";
 
-const Contact = () => {
+type Props = {
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+const Contact = ({setSelectedPage}:Props) => {
   const [pressedCopied, setPressedCopied] = useState(false);
   return (
     <section
@@ -23,7 +27,7 @@ const Contact = () => {
       <Layout className="mx-auto md:px-12 lg:w-5/6 2xl:w-3/4">
         <motion.h1
           className="my-12 text-4xl font-bold"
-          // onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}
+          onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}
         >
           Contact Me
         </motion.h1>

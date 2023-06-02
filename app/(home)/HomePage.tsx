@@ -8,7 +8,11 @@ import { SelectedPage } from "../(shared)/types";
 import { motion } from "framer-motion";
 import TechStack from "../(shared)/TechStack";
 
-const HomePage = () => {
+type Props = {
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+const HomePage = ({setSelectedPage}:Props) => {
   return (
     <main
       className="flex min-h-screen w-full items-center bg-light text-dark dark:bg-dark dark:text-light"
@@ -17,7 +21,7 @@ const HomePage = () => {
       <Layout className="mx-auto !pt-16">
         <motion.div
           className="mx-auto flex w-full flex-col-reverse items-center justify-between gap-4 md:flex-row xl:w-3/4"
-          // onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
+          onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
         >
           <div className="flex flex-col items-center self-center md:w-1/2">
             <AnimatedText

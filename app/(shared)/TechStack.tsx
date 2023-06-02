@@ -10,6 +10,7 @@ import {
   TypescriptIcon,
 } from "./icon";
 import { AnimatePresence, motion } from "framer-motion";
+import js from "public/icons/js.svg"
 
 type Props = {};
 const iconSize = 30;
@@ -22,6 +23,7 @@ const iconList: Array<{
   {
     name: "Javascript",
     icon: <JavascriptIcon fill="#f0db4f" width={iconSize} height={iconSize} />,
+    // icon: js
   },
   {
     name: "NodeJS",

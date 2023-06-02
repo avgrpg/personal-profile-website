@@ -13,6 +13,8 @@ import {
 } from "./icon";
 import Link from "next/link";
 
+// import js from "public/icons/js.svg"
+
 import { SelectedPage } from "./types";
 
 const iconSize = 25;
@@ -90,17 +92,30 @@ const cards = [
     image: projectImage,
     techStack: [
       {
-        name: "React",
-        icon: <ReactIcon fill="#61dafb" width={iconSize} height={iconSize} />,
-        link: "https://reactjs.org/",
-      },
-      {
         name: "NextJS",
         icon: <NextJSIcon width={iconSize} height={iconSize} />,
         link: "https://nextjs.org/",
       },
     ],
   },
+  // {
+  //   id: 3,
+  //   name: "Project 3",
+  //   description:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+  //   furtherDescription:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+  //   link: "https://google.com",
+  //   image: projectImage,
+  //   techStack: [
+  //     {
+  //       name: "Javascript",
+  //       icon: js,
+  //       color: "#f7df1e",
+  //       link: ""
+  //     },
+  //   ],
+  // },
 ];
 
 const childVariant = {
@@ -115,7 +130,11 @@ const cardVariant = {
   },
 };
 
-const Projects = () => {
+type Props = {
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+const Projects = ({setSelectedPage}: Props) => {
   const [selectedCard, setSelectedCard] = useState<Number | null>(null);
   return (
     <section
@@ -125,7 +144,7 @@ const Projects = () => {
       <Layout className="mx-auto md:px-12 lg:w-5/6 2xl:w-3/4">
         <motion.h1
           className="my-12 text-4xl font-bold"
-          // onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
+          onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
         >
           Projects
         </motion.h1>
@@ -164,9 +183,9 @@ const Projects = () => {
                     <h2 className="text-xl font-bold">{card.name}</h2>
                     <p className="mt-2 text-base">{card.description}</p>
                     {(selectedCard == index)&& (
-                      <p className="mt-2 text-base">
+                      <motion.p className="mt-2 text-base">
                         {card.furtherDescription}
-                      </p>
+                      </motion.p>
                     )}
                     <div className="mt-4 flex flex-row gap-2">
                       {card.techStack.map(({ name, icon, link }, index) => {
@@ -233,7 +252,7 @@ const TechStackVariant = ({
   index,
 }: {
   name: string;
-  icon: JSX.Element;
+  icon: any;
   link: string;
   index: number;
 }) => {
@@ -251,7 +270,17 @@ const TechStackVariant = ({
       key={index}
       className="flex flex-row items-center gap-2"
     >
-      <motion.div whileHover={{ y: -2 }}>{icon}</motion.div>
+      <motion.div whileHover={{ y: -2 }}>
+        {icon}
+        {/* <Image
+      priority
+      src={icon}
+      color={color}
+      height={iconSize}
+      width={iconSize}
+      alt="Follow us on Twitter"
+    /> */}
+        </motion.div>
       {showTechDetail && (
         <motion.div
           initial={{ x: -2 }}

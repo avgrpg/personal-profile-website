@@ -74,10 +74,10 @@ export default function Home() {
           </div>
         </Layout>
       </main> */}
-      <HomePage />
+      <HomePage setSelectedPage={setSelectedPage}/>
       <About  setSelectedPage={setSelectedPage} />
-      <Project  />
-      <Contact  />
+      <Project setSelectedPage={setSelectedPage} />
+      <Contact setSelectedPage={setSelectedPage} />
       {/* <Footer /> */}
     </>
   );
