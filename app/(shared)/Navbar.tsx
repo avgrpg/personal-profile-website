@@ -211,9 +211,9 @@ const Navbar = ({
       {/* Mobile menu*/}
       {isOpen && (
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: "-50%", y: "20%" }}
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
           animate={{ scale: 1, opacity: 1 }}
-          className={`${flexbetween} fixed left-1/2 top-1/2 z-30 min-h-[70vh] min-w-[70vw] -translate-x-1/2 -translate-y-1/2 flex-col rounded-lg bg-dark/90 py-32 backdrop-blur-sm dark:bg-light/90`}
+          className={`${flexbetween} fixed left-1/2 top-1/2 z-999 min-h-[70vh] min-w-[70vw]  flex-col rounded-lg bg-dark/90 py-32 backdrop-blur-sm dark:bg-light/90`}
           onClick={() => setIsOpen(false)}
         >
           <nav className="flex flex-col items-center justify-center text-xl font-medium text-light dark:text-dark">
