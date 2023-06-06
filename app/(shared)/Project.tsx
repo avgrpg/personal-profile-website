@@ -17,7 +17,7 @@ const cards = [
     description:
       "This project is a personal profile website built as a web version of my resume, presenting my skills, expertise, and experience in an informative manner. This website is responsive that works in different aspect ratios on various platforms, desktop or mobile. This website also has a dark-light mode toggling feature and interactive design.",
     furtherDescription:
-      "This website is developed using React, Typescript, Next.js, and Tailwind CSS. Both of the four frameworks or libraries used are in the latest version. For instance, Next.js 13 was released about seven months ago, featuring breaking changes compared to the previous version. Building this website using the latest frameworks shows my willingness to learn and utilizing newer technologies. ",
+      "This website is developed using React, Typescript, Next.js, and Tailwind CSS. Both of the four frameworks or libraries used are in the latest version. For instance, Next.js 13 was released about seven months ago, featuring breaking changes compared to the previous version. Building this website using the latest frameworks shows my willingness to learn and utilize newer technologies. ",
     link: "https://github.com/avgrpg/personal-profile-website",
     image: projectImage,
     techStack: [
@@ -90,24 +90,6 @@ const cards = [
       },
     ],
   },
-  // {
-  //   id: 3,
-  //   name: "Project 3",
-  //   description:
-  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-  //   furtherDescription:
-  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-  //   link: "https://google.com",
-  //   image: projectImage,
-  //   techStack: [
-  //     {
-  //       name: "Javascript",
-  //       icon: js,
-  //       color: "#f7df1e",
-  //       link: ""
-  //     },
-  //   ],
-  // },
 ];
 
 const childVariant = {
@@ -217,7 +199,7 @@ const Projects = ({ setSelectedPage }: Props) => {
                     />
                     <motion.button
                       whileHover={{ scale: 1.1 }}
-                      className=" mt-4 self-start rounded-md bg-blue-500 px-4 py-2 text-white"
+                      className=" mt-4 md:self-start rounded-md bg-blue-500 px-4 py-2 text-white"
                     >
                       <Link href={card.link} target="_blank">
                         Open Project

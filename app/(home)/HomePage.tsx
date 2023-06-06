@@ -1,19 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
 import dp from "public/nubelson-fernandes-iE71-TMrrkE-unsplash.jpg";
-import { DownIcon, FigmaIcon, JavascriptIcon, LinkIcon, MaterialUiIcon, NextJSIcon, NodeJSIcon, ReactIcon, TailwindIcon, TypescriptIcon } from "@/app/(shared)/Icon";
+import {
+  DownIcon,
+  FigmaIcon,
+  JavascriptIcon,
+  LinkIcon,
+  MaterialUiIcon,
+  NextJSIcon,
+  NodeJSIcon,
+  ReactIcon,
+  TailwindIcon,
+  TypescriptIcon,
+} from "@/app/(shared)/Icon";
 import AnimatedText from "./AnimatedText";
 import Layout from "./Layout";
 import { SelectedPage } from "../(shared)/types";
 import { motion } from "framer-motion";
 import TechStack from "../(shared)/TechStack";
+import { TypeAnimation } from "react-type-animation";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
 const iconSize = 30;
-
 const iconList: Array<{
   name: string;
   icon: JSX.Element;
@@ -67,7 +78,7 @@ const iconList: Array<{
   },
 ];
 
-const HomePage = ({setSelectedPage}:Props) => {
+const HomePage = ({ setSelectedPage }: Props) => {
   return (
     <main
       className="flex min-h-screen w-full items-center bg-light text-dark dark:bg-dark dark:text-light"
@@ -84,7 +95,34 @@ const HomePage = ({setSelectedPage}:Props) => {
               className="mt-4 !text-center !text-3xl sm:!text-5xl md:!text-left md:!text-6xl lg:!text-7xl xl:!text-8xl"
             />
             <motion.div
-              className="mx-8 my-4 text-base font-medium md:mx-0"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
+              className="my-auto flex flex-row py-5 text-2xl font-semibold md:self-start"
+            >
+              <span>Also a&nbsp;</span>
+              <TypeAnimation
+                sequence={[
+                  "",
+                  300,
+                  "Learner",
+                  300,
+                  "Coder",
+                  300,
+                  "Designer",
+                  300,
+                ]}
+                repeat={Infinity}
+                speed={50}
+              />
+            </motion.div>
+            <motion.div
+              className="mx-8 mb-4 text-base font-medium md:mx-0 text-center md:text-left"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
@@ -97,18 +135,6 @@ const HomePage = ({setSelectedPage}:Props) => {
               I am Ben Tsui, a fresh graduate passionate about frontend
               development and interface design. I am looking forward to becoming
               a frontend developer.
-              {/* <div className="mt-2 flex flex-row items-center gap-2 self-center">
-                Scroll down to learn more
-                <motion.div
-                  initial={{y:-5}}
-                  transition={{ repeat: Infinity, duration: 0.5 }}
-                  animate={{
-                    y: 5,
-                  }}
-                >
-                  <DownIcon />
-                </motion.div>
-              </div> */}
             </motion.div>
             <motion.div
               className="mt-2 flex items-center self-center md:self-start"
@@ -143,7 +169,10 @@ const HomePage = ({setSelectedPage}:Props) => {
                 visible: { opacity: 1, x: 0 },
               }}
             >
-              <TechStack iconList={iconList} className="flex items-center mt-12 gap-4 md:self-start"/>
+              <TechStack
+                iconList={iconList}
+                className="mt-12 flex items-center gap-4 md:self-start"
+              />
             </motion.div>
           </div>
           <div className="mt-12 w-3/4 md:w-1/2">
@@ -152,7 +181,7 @@ const HomePage = ({setSelectedPage}:Props) => {
               placeholder="blur"
               src={dp}
               style={{ objectFit: "cover" }}
-              className="h-full w-full bg-slate-500 rounded-full"
+              className="h-full w-full rounded-full bg-slate-500"
               priority
               sizes="(max-width: 480px) 100vw,
               (max-width: 768px) 75vw,
