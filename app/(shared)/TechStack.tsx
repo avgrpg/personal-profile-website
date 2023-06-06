@@ -3,19 +3,20 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const TechStack = ({
   iconList,
+  className,
 }: {
   iconList: Array<{
     name: string;
     icon: JSX.Element;
     link?: string;
   }>;
+  className?: string;
 }) => {
-  const flexbetween = "flex items-center";
   const [popedout, setPopedout] = useState(false);
   const [showTechDetail, setShowTechDetail] = useState<Number | null>(null);
 
   return (
-    <div className={`${flexbetween} mt-12 gap-4 md:self-start`}>
+    <div className={`${className}`}>
       {iconList.map(({ name, icon, link }, index) => {
         return (
           <motion.a

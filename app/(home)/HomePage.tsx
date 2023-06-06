@@ -143,7 +143,7 @@ const HomePage = ({setSelectedPage}:Props) => {
                 visible: { opacity: 1, x: 0 },
               }}
             >
-              <TechStack iconList={iconList}/>
+              <TechStack iconList={iconList} className="flex items-center mt-12 gap-4 md:self-start"/>
             </motion.div>
           </div>
           <div className="mt-12 w-3/4 md:w-1/2">

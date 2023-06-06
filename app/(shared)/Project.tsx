@@ -16,6 +16,7 @@ import Link from "next/link";
 // import js from "public/icons/js.svg"
 
 import { SelectedPage } from "./types";
+import TechStack from "./TechStack";
 
 const iconSize = 25;
 const cards = [
@@ -189,7 +190,7 @@ const Projects = ({ setSelectedPage }: Props) => {
                         {card.furtherDescription}
                       </p>
                     )}
-                    <div className="mt-4 flex flex-row gap-2">
+                    {/* <div className="mt-4 flex flex-row gap-2">
                       {card.techStack.map(({ name, icon, link }, index) => {
                         return (
                           <TechStackVariant
@@ -201,7 +202,8 @@ const Projects = ({ setSelectedPage }: Props) => {
                           />
                         );
                       })}
-                    </div>
+                    </div> */}
+                    <TechStack iconList={card.techStack} className="mt-4 flex flex-row gap-2"/>
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       className=" mt-4 self-start rounded-md bg-blue-500 px-4 py-2 text-white"
