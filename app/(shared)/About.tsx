@@ -15,7 +15,7 @@ const About = ({ setSelectedPage }: Props) => {
 
   return (
     <section
-      className="mx-auto w-full bg-light dark:bg-dark dark:text-light"
+      className=" min-h-screen mx-auto w-full bg-light dark:bg-dark dark:text-light"
       id="about"
     >
       <Layout className="mt-20 py-16">

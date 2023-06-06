@@ -2,19 +2,10 @@
 import { useState } from "react";
 import Layout from "../(home)/Layout";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import projectImage from "public/projects/christopher-gower-m_HRfLhgABo-unsplash.jpg";
-import {
-  ArrowToRight,
-  NextJSIcon,
-  ReactIcon,
-  TailwindIcon,
-  TypescriptIcon,
-} from "./Icon";
+import { NextJSIcon, ReactIcon, TailwindIcon, TypescriptIcon } from "./Icon";
 import Link from "next/link";
-
-// import js from "public/icons/js.svg"
-
 import { SelectedPage } from "./types";
 import TechStack from "./TechStack";
 
@@ -27,7 +18,7 @@ const cards = [
       "This project is a personal profile website built as a web version of my resume, presenting my skills, expertise, and experience in an informative manner. This website is responsive that works in different aspect ratios on various platforms, desktop or mobile. This website also has a dark-light mode toggling feature and interactive design.",
     furtherDescription:
       "This website is developed using React, Typescript, Next.js, and Tailwind CSS. Both of the four frameworks or libraries used are in the latest version. For instance, Next.js 13 was released about seven months ago, featuring breaking changes compared to the previous version. Building this website using the latest frameworks shows my willingness to learn and utilizing newer technologies. ",
-    link: "https://google.com",
+    link: "https://github.com/avgrpg/personal-profile-website",
     image: projectImage,
     techStack: [
       {
@@ -185,25 +176,45 @@ const Projects = ({ setSelectedPage }: Props) => {
                   <div className="flex basis-2/3 flex-col p-5">
                     <h2 className="text-xl font-bold">{card.name}</h2>
                     <p className="mt-2 text-base">{card.description}</p>
+                    <AnimatePresence>
+
                     {selectedCard == index && (
-                      <p className="mt-2 text-base">
+                      <motion.p
+                        initial={{ height: 0, opacity: 0 }}
+                        className="mt-2 text-base"
+                        animate={{
+                          height: "auto",
+                          opacity: 1,
+                          transition: {
+                            height: {
+                              duration: 0.4,
+                            },
+                            opacity: {
+                              duration: 0.25,
+                            },
+                          },
+                        }}
+                        exit={{
+                          height: 0,
+                          opacity: 0,
+                          transition: {
+                            height: {
+                              duration: 0.4,
+                            },
+                            opacity: {
+                              duration: 0.25,
+                            },
+                          },
+                        }}
+                      >
                         {card.furtherDescription}
-                      </p>
+                      </motion.p>
                     )}
-                    {/* <div className="mt-4 flex flex-row gap-2">
-                      {card.techStack.map(({ name, icon, link }, index) => {
-                        return (
-                          <TechStackVariant
-                            name={name}
-                            icon={icon}
-                            link={link}
-                            index={index}
-                            key={index}
-                          />
-                        );
-                      })}
-                    </div> */}
-                    <TechStack iconList={card.techStack} className="mt-4 flex flex-row gap-2"/>
+                    </AnimatePresence>
+                    <TechStack
+                      iconList={card.techStack}
+                      className="mt-4 flex flex-row gap-2"
+                    />
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       className=" mt-4 self-start rounded-md bg-blue-500 px-4 py-2 text-white"
@@ -224,52 +235,3 @@ const Projects = ({ setSelectedPage }: Props) => {
 };
 
 export default Projects;
-
-const TechStackVariant = ({
-  name,
-  icon,
-  link,
-  index,
-}: {
-  name: string;
-  icon: any;
-  link: string;
-  index: number;
-}) => {
-  const [showTechDetail, setShowTechDetail] = useState(false);
-  return (
-    <motion.a
-      href={link}
-      target="_blank"
-      onHoverStart={() => {
-        setShowTechDetail(true);
-      }}
-      onHoverEnd={() => {
-        setShowTechDetail(false);
-      }}
-      key={index}
-      className="flex flex-row items-center gap-2"
-    >
-      <motion.div whileHover={{ y: -2 }}>
-        {icon}
-        {/* <Image
-      priority
-      src={icon}
-      color={color}
-      height={iconSize}
-      width={iconSize}
-      alt="Follow us on Twitter"
-    /> */}
-      </motion.div>
-      {showTechDetail && (
-        <motion.div
-          initial={{ x: -2 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {name}
-        </motion.div>
-      )}
-    </motion.a>
-  );
-};
