@@ -50,6 +50,7 @@ const cards = [
         link: "https://tailwindcss.com/",
       },
     ],
+    type: "Frontend Devlopment"
   },
   {
     id: 2,
@@ -72,6 +73,7 @@ const cards = [
         link: "https://nextjs.org/",
       },
     ],
+    type: "Full Stack Devlopment"
   },
   {
     id: 3,
@@ -89,6 +91,7 @@ const cards = [
         link: "https://nextjs.org/",
       },
     ],
+    type: "Interface Design"
   },
 ];
 
@@ -100,7 +103,7 @@ const childVariant = {
 const cardVariant = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.2 },
+    transition: { staggerChildren: 0.3 },
   },
 };
 
@@ -157,41 +160,43 @@ const Projects = ({ setSelectedPage }: Props) => {
 
                   <div className="flex basis-2/3 flex-col p-5">
                     <h2 className="text-xl font-bold">{card.name}</h2>
-                    <p className="mt-2 text-base">{card.description}</p>
+                    <h3 className="bg-neutral-700 text-white text-sm my-1 font-normal dark:bg-neutral-200 dark:text-dark py-1 px-3 rounded-full self-start">
+                      {card.type}
+                    </h3>
+                    <p className="mt-1 text-base">{card.description}</p>
                     <AnimatePresence>
-
-                    {selectedCard == index && (
-                      <motion.p
-                        initial={{ height: 0, opacity: 0 }}
-                        className="mt-2 text-base"
-                        animate={{
-                          height: "auto",
-                          opacity: 1,
-                          transition: {
-                            height: {
-                              duration: 0.4,
+                      {selectedCard == index && (
+                        <motion.p
+                          initial={{ height: 0, opacity: 0 }}
+                          className="mt-2 text-base"
+                          animate={{
+                            height: "auto",
+                            opacity: 1,
+                            transition: {
+                              height: {
+                                duration: 0.4,
+                              },
+                              opacity: {
+                                duration: 0.25,
+                              },
                             },
-                            opacity: {
-                              duration: 0.25,
+                          }}
+                          exit={{
+                            height: 0,
+                            opacity: 0,
+                            transition: {
+                              height: {
+                                duration: 0.4,
+                              },
+                              opacity: {
+                                duration: 0.25,
+                              },
                             },
-                          },
-                        }}
-                        exit={{
-                          height: 0,
-                          opacity: 0,
-                          transition: {
-                            height: {
-                              duration: 0.4,
-                            },
-                            opacity: {
-                              duration: 0.25,
-                            },
-                          },
-                        }}
-                      >
-                        {card.furtherDescription}
-                      </motion.p>
-                    )}
+                          }}
+                        >
+                          {card.furtherDescription}
+                        </motion.p>
+                      )}
                     </AnimatePresence>
                     <TechStack
                       iconList={card.techStack}
@@ -199,7 +204,7 @@ const Projects = ({ setSelectedPage }: Props) => {
                     />
                     <motion.button
                       whileHover={{ scale: 1.1 }}
-                      className=" mt-4 md:self-start rounded-md bg-blue-500 px-4 py-2 text-white"
+                      className=" mt-4 rounded-md bg-blue-500 px-4 py-2 text-white md:self-start"
                     >
                       <Link href={card.link} target="_blank">
                         Open Project

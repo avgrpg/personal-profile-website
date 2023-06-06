@@ -100,26 +100,33 @@ const HomePage = ({ setSelectedPage }: Props) => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5 }}
               variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
+                hidden: { opacity: 0, x: -50  },
+                visible: { opacity: 1, x: 0  },
               }}
               className="my-auto flex flex-row py-5 text-2xl font-semibold md:self-start"
             >
               <span>Also a&nbsp;</span>
+              <div className="text-blue-500">
+
               <TypeAnimation
                 sequence={[
                   "",
-                  300,
+                  500,
                   "Learner",
-                  300,
+                  500,
+                  "",
+                  500,
                   "Coder",
-                  300,
+                  500,
+                  "",
+                  500,
                   "Designer",
-                  300,
+                  500,
                 ]}
                 repeat={Infinity}
                 speed={50}
               />
+              </div>
             </motion.div>
             <motion.div
               className="mx-8 mb-4 text-base font-medium md:mx-0 text-center md:text-left"
@@ -134,7 +141,7 @@ const HomePage = ({ setSelectedPage }: Props) => {
             >
               I am Ben Tsui, a fresh graduate passionate about frontend
               development and interface design. I am looking forward to becoming
-              a frontend developer.
+              a frontend developer. Scroll down to learn more!
             </motion.div>
             <motion.div
               className="mt-2 flex items-center self-center md:self-start"
