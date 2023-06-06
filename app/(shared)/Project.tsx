@@ -134,7 +134,7 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Projects = ({setSelectedPage}: Props) => {
+const Projects = ({ setSelectedPage }: Props) => {
   const [selectedCard, setSelectedCard] = useState<Number | null>(null);
   return (
     <section
@@ -166,7 +166,9 @@ const Projects = ({setSelectedPage}: Props) => {
                   }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.03 }}
-                  onTap={() => setSelectedCard(index)}
+                  onTap={() =>
+                    setSelectedCard(index === selectedCard ? null : index)
+                  }
                   className="my-6 cursor-pointer items-center justify-between rounded-md bg-neutral-200 shadow-lg dark:bg-neutral-800 md:flex"
                 >
                   <div className="basis-1/3">
@@ -182,45 +184,21 @@ const Projects = ({setSelectedPage}: Props) => {
                   <div className="flex basis-2/3 flex-col p-5">
                     <h2 className="text-xl font-bold">{card.name}</h2>
                     <p className="mt-2 text-base">{card.description}</p>
-                    {(selectedCard == index)&& (
-                      <motion.p className="mt-2 text-base">
+                    {selectedCard == index && (
+                      <p className="mt-2 text-base">
                         {card.furtherDescription}
-                      </motion.p>
+                      </p>
                     )}
                     <div className="mt-4 flex flex-row gap-2">
                       {card.techStack.map(({ name, icon, link }, index) => {
                         return (
-                          // <motion.a
-                          //   href={link}
-                          //   target="_blank"
-                          //   onHoverStart={() => {
-                          //     setShowTechDetail(index);
-                          //   }}
-                          //   onHoverEnd={() => {
-                          //     setShowTechDetail(null);
-                          //   }}
-                          //   key={index}
-                          //   className="flex flex-row items-center gap-2"
-                          // >
-                          //   <motion.div whileHover={{ y: -2 }}>
-                          //     {icon}
-                          //   </motion.div>
-                          //   {showTechDetail == index && (
-                          //     <motion.div
-                          //       initial={{ x: -2 }}
-                          //       animate={{ x: 0 }}
-                          //       transition={{ duration: 0.5 }}
-                          //     >
-                          //       {name}
-                          //     </motion.div>
-                          //   )}
-                          // </motion.a>
-                          <TechStackVariant 
-                          name={name}
-                          icon={icon}
-                          link={link}
-                          index={index}
-                          key={index}/>
+                          <TechStackVariant
+                            name={name}
+                            icon={icon}
+                            link={link}
+                            index={index}
+                            key={index}
+                          />
                         );
                       })}
                     </div>
@@ -256,7 +234,7 @@ const TechStackVariant = ({
   link: string;
   index: number;
 }) => {
-  const [showTechDetail, setShowTechDetail]=useState(false)
+  const [showTechDetail, setShowTechDetail] = useState(false);
   return (
     <motion.a
       href={link}
@@ -280,7 +258,7 @@ const TechStackVariant = ({
       width={iconSize}
       alt="Follow us on Twitter"
     /> */}
-        </motion.div>
+      </motion.div>
       {showTechDetail && (
         <motion.div
           initial={{ x: -2 }}

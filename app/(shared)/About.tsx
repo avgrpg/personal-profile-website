@@ -48,16 +48,7 @@ const About = ({ setSelectedPage }: Props) => {
               Passionate in Creating Pleasant Frontend Development & Design
             </div>
             <p className="text-lg">
-              Ben Tsui is a fresh graduate passionate about frontend development
-              and interface design. He will own a Bachelor of Engineering in
-              Information Engineering from the City University of Hong Kong. His
-              background in engineering and passion for frontend development
-              make him eager to stay in tune with the latest technologies
-              related to web development and interface design. He self-learned
-              various technologies like Node.js, React, Typescript, Tailwind,
-              and more. With passion and skills learned, he looks forward to
-              building responsive, pleasant, and user-friendly websites with
-              optimized performance.
+              I am a fresh graduate passionate about frontend development and interface design. I am about to obtain a Bachelor of Engineering in Information Engineering from the City University of Hong Kong. My technical background and passion for frontend development make me eager to stay in tune with the latest technologies related to web development and interface design. I self-learned various technologies like Node.js, React, Typescript, Tailwind, and more. With my passion and skills acquired, I look forward to creating responsive, aesthetically pleasing, and user-friendly websites with optimized performance.
             </p>
           </div>
         </motion.div>

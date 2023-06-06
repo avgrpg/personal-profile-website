@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import dp from "public/nubelson-fernandes-iE71-TMrrkE-unsplash.jpg";
-import { DownIcon, LinkIcon } from "@/app/(shared)/Icon";
+import { DownIcon, FigmaIcon, JavascriptIcon, LinkIcon, MaterialUiIcon, NextJSIcon, NodeJSIcon, ReactIcon, TailwindIcon, TypescriptIcon } from "@/app/(shared)/Icon";
 import AnimatedText from "./AnimatedText";
 import Layout from "./Layout";
 import { SelectedPage } from "../(shared)/types";
@@ -11,6 +11,61 @@ import TechStack from "../(shared)/TechStack";
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
+
+const iconSize = 30;
+
+const iconList: Array<{
+  name: string;
+  icon: JSX.Element;
+  link?: string;
+}> = [
+  {
+    name: "Javascript",
+    icon: <JavascriptIcon fill="#f0db4f" width={iconSize} height={iconSize} />,
+    // icon: js
+  },
+  {
+    name: "NodeJS",
+    icon: <NodeJSIcon fill="#4f983f" width={iconSize} height={iconSize} />,
+    link: "https://nodejs.org/en/",
+  },
+  {
+    name: "React",
+    icon: <ReactIcon fill="#61dafb" width={iconSize} height={iconSize} />,
+    link: "https://reactjs.org/",
+  },
+  {
+    name: "Typescript",
+    icon: (
+      <TypescriptIcon
+        fill="#3178c6"
+        width={iconSize - 3}
+        height={iconSize - 3}
+      />
+    ),
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "TailwindCSS",
+    icon: <TailwindIcon fill="#64B5F6" width={iconSize} height={iconSize} />,
+    link: "https://tailwindcss.com/",
+  },
+  {
+    name: "MaterialUI",
+    icon: <MaterialUiIcon fill="#3178c6" width={iconSize} height={iconSize} />,
+    link: "https://material-ui.com/",
+  },
+  {
+    name: "NextJS",
+    icon: <NextJSIcon width={iconSize} height={iconSize} />,
+    link: "https://nextjs.org/",
+  },
+  {
+    name: "Figma",
+    icon: <FigmaIcon width={iconSize} height={iconSize} />,
+    link: "https://www.figma.com/",
+  },
+];
 
 const HomePage = ({setSelectedPage}:Props) => {
   return (
@@ -88,7 +143,7 @@ const HomePage = ({setSelectedPage}:Props) => {
                 visible: { opacity: 1, x: 0 },
               }}
             >
-              <TechStack />
+              <TechStack iconList={iconList}/>
             </motion.div>
           </div>
           <div className="mt-12 w-3/4 md:w-1/2">
