@@ -36,6 +36,7 @@ const Contact = ({setSelectedPage}:Props) => {
             href="mailto:tsuiwaiwai2000@gmail.com"
             target={"_blank"}
             whileHover={{ scale: 1.2 }}
+            aria-label="Mail"
           >
             <MailIcon className="h-12 w-12" fill="currentColor" />
           </motion.a>
@@ -59,6 +60,7 @@ const Contact = ({setSelectedPage}:Props) => {
             href="tel:95616303"
             target={"_blank"}
             whileHover={{ scale: 1.2 }}
+            aria-label="Phone"
           >
             <PhoneIcon className="h-12 w-12" fill="currentColor" />
           </motion.a>
@@ -69,6 +71,7 @@ const Contact = ({setSelectedPage}:Props) => {
             href="https://github.com/avgrpg"
             target={"_blank"}
             whileHover={{ scale: 1.2 }}
+            aria-label="Github"
           >
             <GithubIcon className="h-12 w-12" fill="currentColor" />
           </motion.a>
@@ -79,6 +82,7 @@ const Contact = ({setSelectedPage}:Props) => {
             href="https://github.com/avgrpg"
             target={"_blank"}
             whileHover={{ scale: 1.2 }}
+            aria-label="LinkedIn"
           >
             <LinkedInIcon
               className="h-12 w-12 rounded-lg"
