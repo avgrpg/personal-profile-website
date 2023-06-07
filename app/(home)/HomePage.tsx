@@ -106,7 +106,7 @@ const HomePage = ({ setSelectedPage }: Props) => {
               className="my-auto flex flex-row py-5 text-2xl font-semibold md:self-start"
             >
               <span>Also a&nbsp;</span>
-              <div className="text-blue-500">
+              <div className="text-blue-600">
 
               <TypeAnimation
                 sequence={[
