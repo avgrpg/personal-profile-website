@@ -50,6 +50,7 @@ const Contact = ({setSelectedPage}:Props) => {
               navigator.clipboard.writeText("Copy this text to clipboard");
               setPressedCopied(true);
             }}
+            aria-label="Copy"
           >
             <CopyIcon className="mr-4 h-6 w-6" fill="currentColor" />
           </motion.button>
