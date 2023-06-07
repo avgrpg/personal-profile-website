@@ -32,6 +32,7 @@ const TechStack = ({
             }}
             key={index}
             className="flex flex-row items-center gap-2"
+            aria-label={name}
           >
             <AnimatePresence>
               <motion.div

@@ -123,7 +123,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
       <button
         className="flex flex-col items-center justify-center md:hidden"
         onClick={handleClick}
-        aria-label="Toggle light/dark mode"
+        aria-label="Open menu"
       >
         <span
           className={`block h-0.5 w-6 -translate-y-0.5 rounded-sm bg-dark transition-all duration-300 ease-out dark:bg-light ${
@@ -191,6 +191,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
           <button
             onClick={() => setMode(mode === "dark" ? "light" : "dark")}
             className={`ml-3 rounded-full p-1 `}
+            aria-label="Dark light mode toggle"
           >
             {mode === "dark" ? <LightIcon /> : <MoonIcon />}
           </button>
