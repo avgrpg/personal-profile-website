@@ -200,7 +200,7 @@ const Projects = ({ setSelectedPage }: Props) => {
                     </AnimatePresence>
                     <TechStack
                       iconList={card.techStack}
-                      className="mt-4 flex flex-row gap-2"
+                      className="mt-4 flex flex-row gap-3"
                     />
                     <motion.button
                       whileHover={{ scale: 1.1 }}
