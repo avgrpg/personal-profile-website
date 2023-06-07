@@ -123,6 +123,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
       <button
         className="flex flex-col items-center justify-center md:hidden"
         onClick={handleClick}
+        aria-label="Toggle light/dark mode"
       >
         <span
           className={`block h-0.5 w-6 -translate-y-0.5 rounded-sm bg-dark transition-all duration-300 ease-out dark:bg-light ${
