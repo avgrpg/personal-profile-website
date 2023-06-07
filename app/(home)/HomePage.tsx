@@ -33,7 +33,7 @@ const iconList: Array<{
   {
     name: "Javascript",
     icon: <JavascriptIcon fill="#f0db4f" width={iconSize} height={iconSize} />,
-    // icon: js
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
     name: "NodeJS",
