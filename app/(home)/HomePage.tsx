@@ -1,8 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
 import dp from "public/nubelson-fernandes-iE71-TMrrkE-unsplash.jpg";
 import {
-  DownIcon,
   FigmaIcon,
   JavascriptIcon,
   LinkIcon,

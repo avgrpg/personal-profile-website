@@ -5,7 +5,6 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import projectImage from "public/projects/christopher-gower-m_HRfLhgABo-unsplash.jpg";
 import { NextJSIcon, ReactIcon, TailwindIcon, TypescriptIcon } from "./Icon";
-import Link from "next/link";
 import { SelectedPage } from "./types";
 import TechStack from "./TechStack";
 
@@ -206,9 +205,9 @@ const Projects = ({ setSelectedPage }: Props) => {
                       whileHover={{ scale: 1.1 }}
                       className=" mt-4 rounded-md bg-blue-500 px-4 py-2 text-white md:self-start"
                     >
-                      <Link href={card.link} target="_blank">
+                      <a href={card.link} target="_blank">
                         Open Project
-                      </Link>
+                      </a>
                     </motion.button>
                   </div>
                 </motion.div>
