@@ -156,7 +156,7 @@ const HomePage = ({ setSelectedPage }: Props) => {
             >
               <motion.div whileHover={{ scale: 1.1 }}>
                 <Link
-                  href="/openresource/dummy.pdf"
+                  href="/CV_Ben_Tsui.pdf"
                   target={"_blank"}
                   className="t flex items-center rounded-lg border border-solid border-transparent bg-dark p-2.5 px-6 text-lg font-semibold text-light dark:bg-light dark:text-dark"
                 >

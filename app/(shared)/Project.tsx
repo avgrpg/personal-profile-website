@@ -50,7 +50,7 @@ const cards = [
         link: "https://tailwindcss.com/",
       },
     ],
-    type: "Frontend Devlopment"
+    type: "Frontend Development"
   },
   {
     id: 2,
@@ -73,7 +73,7 @@ const cards = [
         link: "https://nextjs.org/",
       },
     ],
-    type: "Full Stack Devlopment"
+    type: "Full Stack Development"
   },
   {
     id: 3,
