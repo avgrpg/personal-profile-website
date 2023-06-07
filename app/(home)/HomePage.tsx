@@ -155,14 +155,14 @@ const HomePage = ({ setSelectedPage }: Props) => {
               }}
             >
               <motion.div whileHover={{ scale: 1.1 }}>
-                <Link
+                <a
                   href="https://personal-profile-website.vercel.app/CV_Ben_Tsui.pdf"
                   target={"_blank"}
                   className="t flex items-center rounded-lg border border-solid border-transparent bg-dark p-2.5 px-6 text-lg font-semibold text-light dark:bg-light dark:text-dark"
                 >
                   Resume
                   <LinkIcon className="ml-2 w-6" />
-                </Link>
+                </a>
               </motion.div>
             </motion.div>
             <motion.div
