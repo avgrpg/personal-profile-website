@@ -120,15 +120,15 @@ const Projects = ({ setSelectedPage }: Props) => {
       <Layout className="mx-auto md:px-12 lg:w-5/6 2xl:w-3/4">
         <motion.h1
           className="my-12 text-4xl font-bold"
-          onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
-        >
+          >
           Projects
         </motion.h1>
         <motion.div
           className="self-center"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
+          viewport={{ once: true}}
           variants={cardVariant}
         >
           {cards.map((card, index) => {
