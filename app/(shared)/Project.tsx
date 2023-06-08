@@ -4,7 +4,19 @@ import Layout from "../(home)/Layout";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import projectImage from "public/projects/christopher-gower-m_HRfLhgABo-unsplash.jpg";
-import { ExpressJSIcon, MaterialUiIcon, MongoIcon, NextJSIcon, NodeJSIcon, ReactIcon, ReduxIcon, TailwindIcon, TypescriptIcon, VSCodeIcon } from "./Icon";
+import {
+  ExpressJSIcon,
+  FigmaIcon,
+  MaterialUiIcon,
+  MongoIcon,
+  NextJSIcon,
+  NodeJSIcon,
+  ReactIcon,
+  ReduxIcon,
+  TailwindIcon,
+  TypescriptIcon,
+  VSCodeIcon,
+} from "./Icon";
 import { SelectedPage } from "./types";
 import TechStack from "./TechStack";
 
@@ -49,7 +61,7 @@ const cards = [
         link: "https://tailwindcss.com/",
       },
     ],
-    type: "Frontend Development"
+    type: "Frontend Development",
   },
   {
     id: 2,
@@ -64,12 +76,12 @@ const cards = [
       {
         name: "VSCode",
         icon: <VSCodeIcon width={iconSize} height={iconSize} />,
-        link: "https://code.visualstudio.com/"
+        link: "https://code.visualstudio.com/",
       },
       {
         name: "NodeJS",
         icon: <NodeJSIcon fill="#4f983f" width={iconSize} height={iconSize} />,
-        link: "https://nodejs.org/"
+        link: "https://nodejs.org/",
       },
       {
         name: "Typesrcipt",
@@ -89,44 +101,46 @@ const cards = [
       },
       {
         name: "MaterialUI",
-        icon: <MaterialUiIcon fill="#3178c6" width={iconSize} height={iconSize} />,
+        icon: (
+          <MaterialUiIcon fill="#3178c6" width={iconSize} height={iconSize} />
+        ),
         link: "https://material-ui.com/",
       },
       {
         name: "Redux",
         icon: <ReduxIcon fill="#3178c6" width={iconSize} height={iconSize} />,
-        link: "https://redux.js.org/"
+        link: "https://redux.js.org/",
       },
       {
         name: "ExpressJS",
         icon: <ExpressJSIcon width={iconSize} height={iconSize} />,
-        link: "https://expressjs.com/"
+        link: "https://expressjs.com/",
       },
       {
         name: "MongoDB",
         icon: <MongoIcon width={iconSize} height={iconSize} />,
         link: "https://www.mongodb.com/",
-      }
+      },
     ],
-    type: "Full Stack Development"
+    type: "Full Stack Development",
   },
   {
     id: 3,
-    name: "Project 3",
+    name: "Human Computer Interaction Course Project",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
     furtherDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    link: "https://google.com",
+    link: "https://www.figma.com/proto/76mw9JRzJeRctAhRR5IiM5/Oi6Maai6Hap6?type=design&node-id=29-445&scaling=scale-down&page-id=0%3A1&starting-point-node-id=29%3A445",
     image: projectImage,
     techStack: [
       {
-        name: "NextJS",
-        icon: <NextJSIcon width={iconSize} height={iconSize} />,
-        link: "https://nextjs.org/",
+        name: "Figma",
+        icon: <FigmaIcon width={iconSize} height={iconSize} />,
+        link: "https://figma.com/",
       },
     ],
-    type: "Interface Design"
+    type: "Interface Design",
   },
 ];
 
@@ -154,17 +168,13 @@ const Projects = ({ setSelectedPage }: Props) => {
       id="projects"
     >
       <Layout className="mx-auto md:px-12 lg:w-5/6 2xl:w-3/4">
-        <motion.h1
-          className="my-12 text-4xl font-bold"
-          >
-          Projects
-        </motion.h1>
+        <motion.h1 className="my-12 text-4xl font-bold">Projects</motion.h1>
         <motion.div
           className="self-center"
           initial="hidden"
           whileInView="visible"
           onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
-          viewport={{ once: true}}
+          viewport={{ once: true }}
           variants={cardVariant}
         >
           {cards.map((card, index) => {
@@ -195,7 +205,7 @@ const Projects = ({ setSelectedPage }: Props) => {
 
                   <div className="flex basis-2/3 flex-col p-5">
                     <h2 className="text-xl font-bold">{card.name}</h2>
-                    <h3 className="bg-neutral-700 text-white text-sm my-1 font-normal dark:bg-neutral-200 dark:text-dark py-1 px-3 rounded-full self-start">
+                    <h3 className="my-1 self-start rounded-full bg-neutral-700 px-3 py-1 text-sm font-normal text-white dark:bg-neutral-200 dark:text-dark">
                       {card.type}
                     </h3>
                     <p className="mt-1 text-base">{card.description}</p>
