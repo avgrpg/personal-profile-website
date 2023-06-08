@@ -4,7 +4,7 @@ import Layout from "../(home)/Layout";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import projectImage from "public/projects/christopher-gower-m_HRfLhgABo-unsplash.jpg";
-import { NextJSIcon, ReactIcon, TailwindIcon, TypescriptIcon } from "./Icon";
+import { ExpressJSIcon, MaterialUiIcon, MongoIcon, NextJSIcon, NodeJSIcon, ReactIcon, ReduxIcon, TailwindIcon, TypescriptIcon, VSCodeIcon } from "./Icon";
 import { SelectedPage } from "./types";
 import TechStack from "./TechStack";
 
@@ -55,22 +55,58 @@ const cards = [
     id: 2,
     name: "Remote Proctoring System for Online Programming Exam",
     description:
-      "This project aims to build a remote proctoring system that allows students to take examinations in remote locations. The system is written as a VS Code extension. The system built can monitor candidates typing behavior and log it. It also logs candidates' clipboard history and checks if disallowed extensions are enabled, like AI autocompletion. The system then determines the cheating suspicion level and generates individual reports regarding cheating. The logs will be stored in an online database for future review",
+      "(A range score Final Year Project) This project aims to develop a system that allows students to take programming examinations in remote locations. The system is built as a VS Code extension to enhance accessibility. It includes underlying functions in monitoring and logging students' typing behavior, computation of students' suspicion scores, two frontend interfaces for students and teachers, respectively, and a backend server.",
     furtherDescription:
-      "This project aims to build a remote proctoring system that allows students to take examinations in remote locations. The system is written as a VS Code extension. The system built can monitor candidates typing behavior and log it. It also logs candidates' clipboard history and checks if disallowed extensions are enabled, like AI autocompletion. The system then determines the cheating suspicion level and generates individual reports regarding cheating. The logs will be stored in an online database for future review. The systems also provides information about candidates' cheating suspicion scores, clipboard history, and enabled extensions. It additionally provides a code replay feature, similar to a video player.",
-    link: "https://google.com",
+      "The system is split into three parts: extension core, frontend, and backend. The extension core part is developed with VS Code API, Node.js, and typescript. The frontend interfaces are built using React, Material UI, Redux, and Vite for bundling. For the backend server, Express.js is used to create APIs and provide server routes. MongoDB is used as the backend database. Various technologies like Bcrypt and Jsonwebtoken are also utilized for enhancing server security.",
+    link: "https://github.com/avgrpg/RPS_v2",
     image: projectImage,
     techStack: [
+      {
+        name: "VSCode",
+        icon: <VSCodeIcon width={iconSize} height={iconSize} />,
+        link: "https://code.visualstudio.com/"
+      },
+      {
+        name: "NodeJS",
+        icon: <NodeJSIcon fill="#4f983f" width={iconSize} height={iconSize} />,
+        link: "https://nodejs.org/"
+      },
+      {
+        name: "Typesrcipt",
+        icon: (
+          <TypescriptIcon
+            fill="#3178c6"
+            width={iconSize - 2}
+            height={iconSize - 2}
+          />
+        ),
+        link: "https://www.typescriptlang.org/",
+      },
       {
         name: "React",
         icon: <ReactIcon fill="#61dafb" width={iconSize} height={iconSize} />,
         link: "https://reactjs.org/",
       },
       {
-        name: "NextJS",
-        icon: <NextJSIcon width={iconSize} height={iconSize} />,
-        link: "https://nextjs.org/",
+        name: "MaterialUI",
+        icon: <MaterialUiIcon fill="#3178c6" width={iconSize} height={iconSize} />,
+        link: "https://material-ui.com/",
       },
+      {
+        name: "Redux",
+        icon: <ReduxIcon fill="#3178c6" width={iconSize} height={iconSize} />,
+        link: "https://redux.js.org/"
+      },
+      {
+        name: "ExpressJS",
+        icon: <ExpressJSIcon width={iconSize} height={iconSize} />,
+        link: "https://expressjs.com/"
+      },
+      {
+        name: "MongoDB",
+        icon: <MongoIcon width={iconSize} height={iconSize} />,
+        link: "https://www.mongodb.com/",
+      }
     ],
     type: "Full Stack Development"
   },

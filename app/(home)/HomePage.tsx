@@ -98,36 +98,35 @@ const HomePage = ({ setSelectedPage }: Props) => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5 }}
               variants={{
-                hidden: { opacity: 0, x: -50  },
-                visible: { opacity: 1, x: 0  },
+                hidden: { opacity: 0, x: -50 },
+                visible: { opacity: 1, x: 0 },
               }}
               className="my-auto flex flex-row py-5 text-2xl font-semibold md:self-start"
             >
               <span>Also a&nbsp;</span>
               <div className="text-blue-600 dark:text-blue-500">
-
-              <TypeAnimation
-                sequence={[
-                  "",
-                  500,
-                  "Learner",
-                  500,
-                  "",
-                  500,
-                  "Coder",
-                  500,
-                  "",
-                  500,
-                  "Designer",
-                  500,
-                ]}
-                repeat={Infinity}
-                speed={50}
-              />
+                <TypeAnimation
+                  sequence={[
+                    "",
+                    500,
+                    "Learner",
+                    500,
+                    "",
+                    500,
+                    "Coder",
+                    500,
+                    "",
+                    500,
+                    "Designer",
+                    500,
+                  ]}
+                  repeat={Infinity}
+                  speed={50}
+                />
               </div>
             </motion.div>
             <motion.div
-              className="mx-8 mb-4 text-base font-medium md:mx-0 text-center md:text-left"
+              className="mx-8 mb-4 text-center text-base font-medium md:mx-0 md:text-left"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
