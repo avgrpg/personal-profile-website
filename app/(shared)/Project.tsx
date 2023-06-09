@@ -183,7 +183,7 @@ const Projects = ({ setSelectedPage }: Props) => {
                 <motion.div
                   transition={{
                     duration: 0.5,
-                    type: "spring",
+                    // type: "spring",
                     ease: "easeInOut",
                   }}
                   viewport={{ once: true }}
@@ -247,14 +247,21 @@ const Projects = ({ setSelectedPage }: Props) => {
                       iconList={card.techStack}
                       className="mt-4 flex flex-row gap-3"
                     />
-                    <motion.button
+                    {/* <motion.button
                       whileHover={{ scale: 1.1 }}
                       className=" mt-4 rounded-md bg-blue-500 px-4 py-2 text-white md:self-start"
                     >
                       <a href={card.link} target="_blank">
                         Open Project
                       </a>
-                    </motion.button>
+                    </motion.button> */}
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      className=" mt-4 rounded-md bg-blue-500 px-4 py-2 text-white md:self-start text-center"
+                      href={card.link} target="_blank"
+                    >
+                        Open Project
+                    </motion.a>
                   </div>
                 </motion.div>
               </motion.div>
