@@ -47,6 +47,12 @@ const TechStack = ({
                   initial={{ x: 0, width: 0 }}
                   animate={{ x: 7, width: "auto" }}
                   transition={{ duration: 0.3 }}
+                  exit={{
+                    width: 0,
+                    x: 0,
+                    opacity:0
+                  }}
+                  key={name}
                 >
                   {name}
                 </motion.div>

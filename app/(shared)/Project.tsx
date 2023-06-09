@@ -128,9 +128,9 @@ const cards = [
     id: 3,
     name: "Human Computer Interaction Course Project",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+      "This project is a group project assigned in the Human-Computer Interaction course. I was given to use Figma to build a prototype for the mobile app idea within the group. The interface is built with interaction design principles learned in the course. It is aesthetically pleasant and user-friendly. ",
     furtherDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+      "The interface is implemented using Figma. Components are built to ensure scalability and reusability. Consistency is also maintained thought out the app design. The interface offers interactive feedback. It also permits easy reversal of actions, such as navigating the previous page. Various design principles like progressive disclosure are adopted in the design. ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
     link: "https://www.figma.com/proto/76mw9JRzJeRctAhRR5IiM5/Oi6Maai6Hap6?type=design&node-id=29-445&scaling=scale-down&page-id=0%3A1&starting-point-node-id=29%3A445",
     image: projectImage,
     techStack: [
@@ -168,12 +168,16 @@ const Projects = ({ setSelectedPage }: Props) => {
       id="projects"
     >
       <Layout className="mx-auto md:px-12 lg:w-5/6 2xl:w-3/4">
-        <motion.h1 className="my-12 text-4xl font-bold">Projects</motion.h1>
+        <motion.h1
+          className="my-12 text-4xl font-bold"
+        onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
+        >
+          Projects
+        </motion.h1>
         <motion.div
           className="self-center"
           initial="hidden"
           whileInView="visible"
-          onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
           viewport={{ once: true }}
           variants={cardVariant}
         >

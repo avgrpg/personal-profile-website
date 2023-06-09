@@ -47,7 +47,7 @@ const Contact = ({setSelectedPage}:Props) => {
             whileHover={{ scale: 1.2 }}
             onHoverEnd={() => setPressedCopied(false)}
             onClick={() => {
-              navigator.clipboard.writeText("Copy this text to clipboard");
+              navigator.clipboard.writeText("tsuiwaiwai2000@gmail.com");
               setPressedCopied(true);
             }}
             aria-label="Copy"
