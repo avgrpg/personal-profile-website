@@ -4,6 +4,9 @@ import Layout from "../(home)/Layout";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import projectImage from "public/projects/christopher-gower-m_HRfLhgABo-unsplash.jpg";
+import HCI from "public/projects/HCI_App_design.jpg"
+import RPS from "public/projects/RPS.jpg"
+import PPW from "public/projects/Personal_Profile_Website.jpg"
 import {
   ExpressJSIcon,
   FigmaIcon,
@@ -30,7 +33,7 @@ const cards = [
     furtherDescription:
       "This website is developed using React, Typescript, Next.js, and Tailwind CSS. Both of the four frameworks or libraries used are in the latest version. For instance, Next.js 13 was released about seven months ago, featuring breaking changes compared to the previous version. Building this website using the latest frameworks shows my willingness to learn and utilize newer technologies. ",
     link: "https://github.com/avgrpg/personal-profile-website",
-    image: projectImage,
+    image: PPW,
     techStack: [
       {
         name: "React",
@@ -71,7 +74,7 @@ const cards = [
     furtherDescription:
       "The system is split into three parts: extension core, frontend, and backend. The extension core part is developed with VS Code API, Node.js, and typescript. The frontend interfaces are built using React, Material UI, Redux, and Vite for bundling. For the backend server, Express.js is used to create APIs and provide server routes. MongoDB is used as the backend database. Various technologies like Bcrypt and Jsonwebtoken are also utilized for enhancing server security.",
     link: "https://github.com/avgrpg/RPS_v2",
-    image: projectImage,
+    image: RPS,
     techStack: [
       {
         name: "VSCode",
@@ -132,7 +135,7 @@ const cards = [
     furtherDescription:
       "The interface is implemented using Figma. Components are built to ensure scalability and reusability. Consistency is also maintained thought out the app design. The interface offers interactive feedback. It also permits easy reversal of actions, such as navigating the previous page. Various design principles like progressive disclosure are adopted in the design. ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
     link: "https://www.figma.com/proto/76mw9JRzJeRctAhRR5IiM5/Oi6Maai6Hap6?type=design&node-id=29-445&scaling=scale-down&page-id=0%3A1&starting-point-node-id=29%3A445",
-    image: projectImage,
+    image: HCI,
     techStack: [
       {
         name: "Figma",
@@ -203,7 +206,7 @@ const Projects = ({ setSelectedPage }: Props) => {
                       placeholder="blur"
                       src={card.image}
                       style={{ objectFit: "cover" }}
-                      className="h-auto w-full rounded-xl"
+                      className="h-auto w-full rounded-md"
                     />
                   </div>
 

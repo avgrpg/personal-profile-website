@@ -1,5 +1,6 @@
 import Image from "next/image";
-import dp from "public/nubelson-fernandes-iE71-TMrrkE-unsplash.jpg";
+// import dp from "public/nubelson-fernandes-iE71-TMrrkE-unsplash.jpg";
+import dp from "public/Picture.jpeg"
 import {
   FigmaIcon,
   JavascriptIcon,
