@@ -95,7 +95,7 @@ const Contact = ({setSelectedPage}:Props) => {
         <div className="mx-4 my-8 flex flex-row items-center justify-start">
           <motion.div whileHover={{ scale: 1.1 }}>
             <Link
-              href="/openresource/dummy.pdf"
+              href="/CV_Ben_Tsui.pdf"
               target={"_blank"}
               className="flex rounded-lg bg-dark p-2.5 px-6 text-lg font-semibold text-light dark:bg-light dark:text-dark"
             >
