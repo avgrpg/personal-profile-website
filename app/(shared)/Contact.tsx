@@ -80,7 +80,7 @@ const Contact = ({setSelectedPage}:Props) => {
         </div>
         <div className="mx-4 my-8 flex flex-row items-center justify-start">
           <motion.a
-            href="https://github.com/avgrpg"
+            href="https://www.linkedin.com/in/ben-tsui-046b1627a"
             target={"_blank"}
             whileHover={{ scale: 1.2 }}
             aria-label="LinkedIn"
